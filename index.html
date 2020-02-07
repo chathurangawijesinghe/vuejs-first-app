@@ -2,8 +2,11 @@
 </style>
 
 <div id="app">
-  <app-username v-bind:username="'Chris'"></app-username>
+  <app-username v-bind:username="'Chris'"
+    v-on:onuserclick="onClick"></app-username>
   <app-username v-bind:username="'Anna'"></app-username>
+  
+  <input v-model="name" type="text" />
   <p v-bind:class="{ updated: name == 'Max' ? false : true }">{{ name }}</p>
   <p v-if="name == 'Max' ? false : true">Name updated!</p>
   <button v-on:click="changeName">Change Name</button>
